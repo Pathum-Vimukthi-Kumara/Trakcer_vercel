@@ -1,0 +1,185 @@
+/* ===== Global Reset to Remove Extra Space ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ===== Header Bar (Fixed and No Space) ===== */
+.header-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index:1000; /* Ensure header is on top */
+  display: flex;
+  align-items: center;
+  background-color: teal;
+  border-bottom: 1px solid #ccc;
+  height: 60px;
+  padding: 0 1rem;
+  justify-content: flex-start;
+  margin: 0;
+}
+
+/* ===== Header Left Section Styling ===== */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.hamburger {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #000;
+  cursor: pointer;
+}
+
+.logo-image {
+  max-width: 40px;
+  position: relative;
+}
+
+/* Prevent Wrapping and Ensure Proper Spacing */
+.app-title {
+  font-size: 1.40rem;
+  font-weight: bold;
+  color: whitesmoke;
+  white-space: nowrap;      /* ✅ Prevents text from wrapping */
+  overflow: hidden;         /* ✅ Prevents content overflow */
+  text-overflow: ellipsis;  /* Optional: Adds '...' if text is too long */
+}
+
+
+/* ===== Sidebar Styling ===== */
+.sidebar {
+  position: fixed;
+  top: 60px; /* No space below header */
+  left: 0;
+  width: 240px;
+  height: calc(100vh - 60px); /* Fit perfectly under the header */
+  background-color:teal;
+  border-right: 1px solid #ccc;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%); /* Hidden by default */
+  overflow-y: auto;
+  z-index: 2;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* Sidebar Navigation Styling */
+.sidebar-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-nav li a {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 500;
+}
+/* Default Link Styling */
+.logout-link {
+  text-decoration: none;
+  color: teal;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: 1px solid teal;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+/* Sidebar Navigation Button */
+.nav-button {
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-button:hover {
+    background-color: green;
+    transform: translateY(-2px);
+}
+
+/* Logout Button */
+.logout-button {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logout-button:hover {
+    background-color: whitesmoke;
+    transform: translateY(-2px);
+}
+
+/* Hover Effect for Logout Link */
+/* Default Sidebar Link Hover */
+.sidebar-nav li a:hover {
+ background-color: black;
+  color: white;
+}
+
+/* Specific Hover Effect for Logout Button Only */
+.sidebar-nav li .logout-link:hover {
+  background-color: red;
+  color: white;
+  transform: scale(1.1);
+}
+
+
+
+
+/* ===== Main Content Area (No Space Below Header) ===== */
+.main-content {
+  margin-left: 0; /* Adjusted to prevent space */
+  margin-top: 60px; /* Space for the fixed header only */
+  padding: 1rem;
+  width: 100%;
+  height: calc(100vh - 60px); 
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+/* ===== Message Box Styling (Optional) ===== */
+.message-box {
+  position: fixed;
+  top: 80px;
+  right: 1rem;
+  background-color: teal;
+  border: 1px solid #ccc;
+  padding: 0.75rem 1rem;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .sidebar {
+      width: 100%;
+  }
+
+  .main-content {
+      margin-left: 0;
+  }
+}

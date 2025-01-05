@@ -1,0 +1,209 @@
+/* src/Components/ChartSection.css */
+
+/* 1. Main Container */
+.chart-section {
+  padding: 2rem;
+  background-color: #ffffff; /* Changed to white for a clean background */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+  color:black;
+  max-width: 1200px;
+  margin-top:60px;
+  margin-left:10%;
+  font-family: aril;
+  
+
+  transition: all 0.3s ease-in-out; /* Smooth transitions */
+}
+.label{
+  color:black;
+}
+
+/* 2. Section Title */
+.chart-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: black; /* Changed to black for better readability */
+  font-size: 2rem;
+  
+  font-weight: 700;
+}
+
+/* 3. Chart Container */
+.chart-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+/* 4. Individual Chart Styles */
+.pie_chart,
+.bar_chart {
+  background-color: #ffffff; /* Ensures white background for charts */
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Added shadow for 3D effect */
+  flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis */
+  max-width: 400px;
+  color:black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transitions */
+}
+
+/* 5. Chart Titles */
+.pie_chart h3,
+.bar_chart h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: black; /* Changed to black */
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.pie_chart h3
+{
+  color:black;
+}
+
+/* 6. Responsive Design */
+
+/* For tablets and below */
+@media (max-width: 992px) {
+  .chart-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pie_chart,
+  .bar_chart {
+    max-width: 600px;
+    width: 100%;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 600px) {
+  .chart-section {
+    padding: 1rem;
+    margin-left: -30px;
+  }
+
+  .chart-section h2 {
+    font-size: 1.5rem;
+    margin-left:20px;
+    margin-bottom: 1.5rem;
+  }
+
+  .pie_chart,
+  .bar_chart {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .pie_chart h3,
+  .bar_chart h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* 7. Dark Mode Support (Optional) */
+/* If your application supports dark mode, enhance visibility */
+@media (prefers-color-scheme: dark) {
+  .chart-section {
+    background-color:white;
+  }
+
+  .chart-section h2 {
+    color: black;
+    margin-left:30px;
+  }
+
+  .pie_chart,
+  .bar_chart {
+    background-color: #2c2c2c;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  }
+
+  .pie_chart h3,
+  .bar_chart h3 {
+    color: black;
+  }
+
+  /* Adjust Chart.js elements if necessary */
+}
+
+/* 8. Smooth Transitions for Interactive Elements */
+.chart-section,
+.pie_chart,
+.bar_chart {
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
+.pie_chart:hover,
+.bar_chart:hover {
+  transform: translateY(-5px) scale(1.02); /* Slight lift and scale for 3D feel */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* 9. Chart Canvas Styling */
+.pie_chart canvas,
+.bar_chart canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* 10. Accessibility Enhancements */
+.chart-section h2,
+.pie_chart h3,
+.bar_chart h3 {
+  font-family: aril;
+  /* Modern, readable font */
+}
+
+.chart-section {
+  
+  color: black; /* Ensures all text within chart-section is black */
+}
+/* src/Components/ChartSection.css */
+
+/* 1. Main Container */
+.chart-section {
+  padding: 2rem;
+  background-color: white; /* Set background to teal */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+  max-width: 1200px;
+ 
+  transition: all 0.3s ease-in-out; /* Smooth transitions */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, readable font */
+  color: black; /* Set text color to white for better contrast */
+}
+
+/* 2. Section Title */
+.chart-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: black; /* Change to white for visibility against teal */
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* 5. Chart Titles */
+.pie_chart h3,
+.bar_chart h3 {
+  text-align: center;
+  font-family: aril;
+  margin-bottom: 1rem;
+  color: #ffffff; /* Change to white for consistency */
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* 10. Accessibility Enhancements */
+.chart-section h2,
+.pie_chart h3,
+.bar_chart h3 {
+ 
+margin-top:30px;
+  font-family: aril;
+}

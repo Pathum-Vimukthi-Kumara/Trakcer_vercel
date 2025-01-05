@@ -1,0 +1,256 @@
+/* src/Components/TransactionForm.css */
+
+/* 1. Main Form Container */
+.transaction-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  max-width: 350px;
+  margin: auto;
+}
+
+/* 2. Form Title */
+.transaction-form h2 {
+  text-align: center;
+  margin-bottom: 1.2rem;
+  color: teal;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 3. Input Fields (Left Align and White Color) */
+.transaction-form input[type="text"],
+.transaction-form input[type="number"],
+.transaction-form input[type="date"] {
+  padding: 0.65rem;
+  margin-bottom: 1rem;
+  border: 1px solid teal;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+  text-align: left;
+  background-color: white;
+  margin-left: -8px;
+  width: 100%;
+}
+
+.transaction-form input[type="text"]:focus,
+.transaction-form input[type="number"]:focus,
+.transaction-form input[type="date"]:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/* 4. Transaction Type Selection */
+.transaction-type {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1.2rem;
+  gap: 0.75rem;
+}
+
+.transaction-type label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: black;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.transaction-type label:hover {
+  color: #4caf50;
+}
+
+/* 5. Form Actions (Buttons) */
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.form-actions button {
+  flex: 1 1 auto;
+  padding: 0.65rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin-left:3px;
+}
+
+.form-actions button[type="submit"] {
+  background-color: #4caf50;
+  color: #ffffff;
+}
+
+.form-actions button[type="submit"]:hover {
+  background-color: green;
+  transform: translateY(-2px);
+}
+
+.form-actions .cancel-button {
+  background-color: #f44336;
+  color: #ffffff;
+}
+
+.form-actions .cancel-button:hover {
+  background-color: firebrick;
+  transform: translateY(-2px);
+}
+
+/* 6. Error Message */
+.error {
+  color: #f44336;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* 7. Responsive Design */
+
+/* Mobile Phones (max-width: 600px) */
+@media (max-width: 600px) {
+  .transaction-form {
+    padding: 1rem;
+    margin: 0.5rem;
+    max-width: 300px;
+  }
+
+  .transaction-form h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .transaction-form input[type="text"],
+  .transaction-form input[type="number"],
+  .transaction-form input[type="date"] {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .form-actions button {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    margin-left:3px;
+  }
+
+  .transaction-type {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .transaction-type label {
+    font-size: 0.85rem;
+    text-align: left;
+    color: black;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-left:3px;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+
+  .error {
+    font-size: 0.8rem;
+  }
+}
+
+/* Tablets (max-width: 992px) */
+@media (max-width: 992px) and (min-width: 601px) {
+  .transaction-form {
+    padding: 1.5rem;
+  }
+
+  .transaction-form h2 {
+    font-size: 1.8rem;
+  }
+
+  .transaction-type label {
+    font-size: 1rem;
+    color: black;
+  }
+
+  .form-actions button {
+    flex: 1 1 45%;
+    margin-left:5px;
+  }
+}
+
+/* 8. Dark Mode Support (Optional) */
+@media (prefers-color-scheme: dark) {
+  .transaction-form {
+    background-color: teal;
+    box-shadow: 0 6px 14px rgba(255, 255, 255, 0.1);
+  }
+
+  .transaction-form h2 {
+    color: #ffffff;
+  }
+
+  .transaction-form input[type="text"],
+  .transaction-form input[type="number"],
+  .transaction-form input[type="date"] {
+    background-color: white;
+    border: 1px solid teal;
+    color: black;
+  }
+
+  .transaction-type label {
+    color: white;
+  }
+
+  .transaction-type label:hover {
+    color: #4caf50;
+  }
+
+  .form-actions button[type="submit"],
+  .form-actions .cancel-button {
+    margin-left:3px;
+    color: #ffffff;
+  }
+
+  .error {
+    color: #ff6b6b;
+  }
+}
+
+/* 9. Smooth Transitions for Interactive Elements */
+.transaction-form,
+.transaction-form input[type="text"],
+.transaction-form input[type="number"],
+.transaction-form input[type="date"],
+.transaction-type label,
+.form-actions button {
+  transition: all 0.3s ease-in-out;
+}
+
+/* 10. Accessibility Enhancements */
+.transaction-form input[type="text"],
+.transaction-form input[type="number"],
+.transaction-form input[type="date"],
+.form-actions button {
+  margin-left: -8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -1,0 +1,80 @@
+.message-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1050;
+  background-color: rgba(0, 0, 0, 0.5); /* Slightly darkened background overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Content Box Styling */
+.message-box-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 90%;
+  border: 2px solid teal;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Message Text Styling */
+.message-box-content p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: teal;
+  margin-bottom: 1.5rem;
+}
+
+/* Close Button Styling */
+.close-button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: crimson;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.close-button:hover {
+  background-color: darkred;
+  transform: translateY(-3px);
+}
+
+/* Animation for Message Box Appearance */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Styling */
+@media (max-width: 480px) {
+  .message-box-content {
+      padding: 1.5rem;
+      max-width: 90%;
+  }
+
+  .close-button {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+  }
+
+  .message-box-content p {
+      font-size: 1rem;
+  }
+}

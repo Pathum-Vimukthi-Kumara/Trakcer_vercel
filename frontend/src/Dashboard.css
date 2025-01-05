@@ -1,0 +1,96 @@
+/* Dashboard Layout */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh; /* Changed to viewport units for better responsiveness */
+  min-height: 100vh; /* Ensures the dashboard covers the full viewport height */
+  background-color: whitesmoke;
+  color: #fff; /* Ensure high contrast */
+  overflow: hidden; /* Prevent overall page scroll if not needed */
+}
+
+/* Content Row */
+.content-row {
+  display: flex;
+  flex: 1;
+  gap: 1rem;
+  padding: 1rem;
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Disable horizontal scrolling */
+  max-height: calc(100vh - 4rem); /* Adjust to allow for scrolling within the viewport */
+  transition: all 0.3s ease; /* Smooth transitions */
+}
+
+/* Sections */
+.section {
+  flex: 1;
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  overflow-y: auto; /* Enable scrolling for individual sections */
+  max-height: 100%; /* Ensure sections stay within the parent container */
+  transition: all 0.3s ease; /* Smooth transitions */
+}
+
+/* Scrollbar Styling */
+.content-row::-webkit-scrollbar,
+.section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content-row::-webkit-scrollbar-thumb,
+.section::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.content-row::-webkit-scrollbar-thumb:hover,
+.section::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Responsive Design for Tablets and Small Screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .content-row {
+    flex-direction: column; /* Stack sections vertically */
+    gap: 1rem; /* Add spacing between sections */
+    padding: 0.5rem; /* Reduce padding for smaller screens */
+  }
+
+  .section {
+    flex: none; /* Prevent sections from stretching unevenly */
+    min-height: 250px; /* Ensure a reasonable height for each section */
+    max-height: 70vh; /* Adjust for smaller viewports */
+    padding: 0.8rem; /* Slightly reduced padding */
+  }
+}
+
+/* Responsive Design for Phones (max-width: 768px) */
+@media (max-width: 768px) {
+  .content-row {
+    padding: 0.5rem; /* Maintain reduced padding */
+  }
+
+  .section {
+    min-height: 200px; /* Reduce height for smaller phones */
+    max-height: 65vh; /* Ensure sections fit within the screen */
+    padding: 0.8rem; /* Maintain reduced padding */
+  }
+}
+
+/* Responsive Design for Very Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .content-row {
+    gap: 0.8rem; /* Smaller spacing between sections */
+    padding: 0.3rem; /* Reduce padding for very small screens */
+  }
+
+  .section {
+    min-height: 180px; /* Ensure sections are usable on small phones */
+    max-height: 60vh; /* Fit sections within the screen */
+    padding: 0.5rem; /* Further reduce padding */
+    font-size: 0.9rem; /* Adjust font size for better readability */
+  }
+}

@@ -1,0 +1,131 @@
+/* Global Reset to Remove Spacing and Prevent Scrolling */
+
+/* Centering Login Box (Glassmorphism Effect) */
+.login-container {
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;  /* ✅ Center content vertically */
+    align-items: center;      /* ✅ Center content horizontally */
+    background: rgba(255, 255, 255, 0.15); /* Transparent Glass Effect */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px); 
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;  /* ✅ Adjusted for responsiveness */
+    text-align: center;
+    color: black;
+    z-index: 1;
+    position: relative;
+}
+
+/* Header Styling */
+h2 {
+    font-size: 2rem;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Form Group Styling */
+.form-group {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    font-size: 1rem;
+    color: whitesmoke;
+    font-weight: 500;
+}
+
+/* Input Field Styling */
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 1rem;
+    transition: box-shadow 0.3s ease;
+}
+
+input::placeholder {
+    color: #ddd;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #44de15;
+    box-shadow: 0 0 10px rgba(68, 222, 21, 0.8);
+}
+
+/* Button Styling */
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: #44de15;
+    color: white;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container button:hover {
+    background: #3fcc0c;
+    box-shadow: 0 0 12px rgba(68, 222, 21, 0.7);
+
+   
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Signup Link Styling */
+.signup-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.signup-link a {
+    color:whitesmoke ;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    color: green;
+}
+
+/* ✅ Responsive Design (Centered on All Devices) */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 20px;
+        width: 90%;  /* Adjust container size for tablets */
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 15px;
+        border-radius: 15px;
+        width: 95%;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+}

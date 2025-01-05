@@ -1,0 +1,78 @@
+/* Footer base styling */
+.footer {
+    background-color: Teal;
+    padding: 20px;
+    font-weight: bold;
+    z-index: 2;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    width: 100vw; /* Full viewport width */
+    box-sizing: border-box; /* Includes padding and border in the total width */
+    position: fixed; /* Ensures footer sticks to the bottom of the page */
+    bottom: 0;
+    left: 0;
+}
+
+/* Ensure the body and html take full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Flex layout to push footer to the bottom */
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+}
+
+.content {
+    flex: 1; /* Pushes footer to the bottom */
+}
+
+/* Footer Link Styling */
+.footer p, .footer-link {
+    font-size: 1rem;
+    margin: 0;
+}
+
+
+
+
+/* Responsive Design for Tablets and Smaller Screens */
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    .footer p {
+        margin-bottom: 10px;
+    }
+
+    .footer-link {
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+}
+
+/* Responsive Design for Mobile Phones */
+@media (max-width: 480px) {
+    .footer {
+        font-size: 0.8rem;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .footer p {
+        margin-bottom: 5px;
+    }
+
+    .footer-link {
+        display: block;
+        margin: 5px 0;
+    }
+}

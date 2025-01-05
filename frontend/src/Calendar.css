@@ -1,0 +1,279 @@
+/* General Calendar Container Styling - Smaller for Web */
+.calendar-container {
+  background-color: #fff;
+  max-width: 600px; /* Smaller calendar size for web */
+  margin: 2rem auto;
+  max-height: 700px;
+  margin-top: 60px;
+  color:white;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 2px solid teal;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Bar Styling */
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.calendar-nav button {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  color: #555;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease-in-out;
+  border-radius: 5px;
+}
+
+.calendar-nav button:hover {
+  color: teal;
+  transform: scale(1.05);
+}
+
+.calendar-nav h2 {
+  font-size: 1.2rem;
+ 
+  color: teal;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* Calendar Grid Styling */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  border: 2px solid teal;
+}
+
+.calendar-header div {
+  background-color: #f9f9f9;
+  text-align: center;
+  padding: 0.5rem;
+  font-weight: bold;
+  color: teal;
+  border-bottom: 2px solid teal;
+}
+
+/* Calendar Body Styling */
+.calendar-body {
+  background-color: #fff;
+}
+
+/* Calendar Cell - Smaller for Desktop */
+.calendar-cell {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  box-sizing: border-box;
+  padding: 0.4rem; /* Reduced padding */
+  text-align: left;
+  border: 2px solid teal;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  transition: background-color 0.2s, transform 0.2s;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem; /* Smaller font size */
+}
+
+.calendar-cell:hover {
+  background-color: #f0f8ff;
+  transform: scale(1.05);
+}
+
+/* Dots for Income and Expense */
+.dots {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 18px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-red {
+  background-color: red;
+}
+
+.dot-green {
+  background-color: green;
+}
+
+/* Day Number Styling */
+.day-number {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: teal;
+}
+
+/* Transaction Popup Styling */
+/* Updated Transaction Popup Styling for a Modern Look */
+.transaction-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #008080; /* Teal */
+  border: none;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-width: 300px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.transaction-popup ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.transaction-popup ul li {
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: white;
+}
+
+.transaction-popup button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: crimson;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.transaction-popup button:hover {
+  background-color: red;
+  transform: translateY(-3px);
+}
+
+/* Adding a subtle border for the popup container */
+
+/* Modernizing the font and spacing */
+.transaction-popup p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+}
+
+.transaction-popup button:focus {
+  outline: none;
+}
+
+
+/* ✅ Responsive Design */
+
+/* Tablets and Small Laptops */
+@media (max-width: 768px) {
+  .calendar-container {
+      max-width: 90%;
+      padding: 1rem;
+      margin-top:140px;
+}
+
+
+  .calendar-cell {
+      padding: 0.7rem;
+      font-size: 0.9rem;
+  }
+  .dots {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+
+  .calendar-nav button {
+      font-size: 0.9rem;
+      padding: 0.2rem;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  .calendar-container {
+      max-width: 100%;
+      padding: 0.5rem;
+      border: 1px solid teal;
+      margin-top:135px;
+  }
+  .dots {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 12px;
+  }y
+ 
+
+  .calendar-grid {
+      gap: 2px;
+  }
+
+  .calendar-nav h2 {
+      font-size: 1rem;
+  }
+
+  .calendar-cell {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      padding: 0.8rem;
+      font-size: 0.8rem;
+  }
+
+  .day-number {
+      font-size: 0.8rem;
+  }
+
+  .calendar-nav button {
+      font-size: 0.9rem;
+      padding: 0.2rem;
+  }
+}
+
+/* Ultra Small Screens */
+@media (max-width: 320px) {
+  .calendar-cell {
+      padding: 0.4rem;
+      font-size: 0.7rem;
+  }
+  .dots {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+
+  .calendar-container {
+      padding: 0.5rem;
+  }
+
+  .calendar-nav h2 {
+      font-size: 0.8rem;
+  }
+}
+
+html, body {
+  background-color: #fff;
+  overflow: auto;
+}
