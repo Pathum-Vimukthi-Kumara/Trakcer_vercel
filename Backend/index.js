@@ -1,11 +1,23 @@
-const express = require("express");
-const mysql = require("mysql2");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const cors = require("cors");
-const helmet = require("helmet");
-const Joi = require("joi"); 
-require("dotenv").config();
+import express from 'express';
+import mysql from 'mysql2';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import cors from 'cors';
+import helmet from 'helmet';
+import Joi from 'joi';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const express = require('express');
+const mysql = require('mysql2');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const cors = require('cors');
+const helmet = require('helmet');
+const Joi = require('joi');
+require('dotenv').config();
+
 
 const app = express();
 app.use(express.json({ limit: '1mb' })); 
